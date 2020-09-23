@@ -4,7 +4,7 @@ permalink: /data-wrangling/
 title: "Projects"
 author_profile: true
 header:
-  image: "/images/fort point.pnp"
+  image: "/images/fort point.png"
 ---
 
 
