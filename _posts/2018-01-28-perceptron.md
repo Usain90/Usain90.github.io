@@ -1,14 +1,14 @@
 ---
-title: "Data Wrangling Project"
+title: "Project"
 date: 2018-01-28
 tags: [data wrangling, data science, messy data]
 header:
   image: "/images/perceptron/percept.jpg"
-excerpt: "Data Wrangling, Data Science, Messy Data"
+excerpt: "Titanic Project, Data Science, Python, Data Analysis"
 mathjax: "true"
 ---
 
-# H1 Heading
+# Titanic Data Analysis Project using Python
 
 ## H2 Heading
 
