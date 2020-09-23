@@ -1,14 +1,14 @@
 ---
-title: "Project"
+title: "Titanoc catastrophe data analysis using Python"
 date: 2018-01-28
-tags: [data wrangling, data science, messy data]
+tags: [data analysis, data science,Python,]
 header:
   image: "/images/perceptron/percept.jpg"
 excerpt: "Titanic Project, Data Science, Python, Data Analysis"
 mathjax: "true"
 ---
 
-# Titanic Data Analysis Project using Python
+# H1 Heading
 
 ## H2 Heading
 
