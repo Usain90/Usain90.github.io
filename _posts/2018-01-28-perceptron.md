@@ -1,5 +1,5 @@
 ---
-title: "Titanoc catastrophe data analysis using Python"
+title: "Titanic catastrophe data analysis using Python"
 date: 2020-09-15
 tags: [data analysis, data science,Python,]
 header:
