@@ -1,6 +1,6 @@
 ---
 title: "Titanoc catastrophe data analysis using Python"
-date: 2018-01-28
+date: 2020-09-15
 tags: [data analysis, data science,Python,]
 header:
   image: "/images/perceptron/percept.jpg"
