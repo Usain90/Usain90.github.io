@@ -1,8 +1,8 @@
 # main links
 main:
-  - title: "bout"
+  - title: "About"
     url: /about/
-  - title: "Data Wrangling Projects"
+  - title: "Data Projects"
     url: /data-wrangling/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
