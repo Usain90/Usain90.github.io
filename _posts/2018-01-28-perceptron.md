@@ -19,6 +19,14 @@ First we will get our dataset from [Kaggle.com](https://www.kaggle.com/c/titanic
 After importing Python liberaries such as Pandas, Numpy and seaborn we will open the dataset in Python:
 ```python
     titanic_df = pd.read_csv(r"C:\Users\Usuario\Desktop\Titanic Project\data.csv")
+```
+Let's take a look for the first 5 raws of our data:
+```python
+    titanic_df.head()
+```
+
+
+
 
 
 And here's some *italics*
