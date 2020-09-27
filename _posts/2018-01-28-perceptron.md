@@ -1,20 +1,25 @@
 ---
-title: "Titanic catastrophe data analysis using Python"
+title: "Analyzing Titanic Dataset In Python"
 date: 2020-09-15
-tags: [data analysis, data science,Python,]
+tags: [data analysis, data science,Python,titanic]
 header:
   image: "/images/perceptron/percept.jpg"
 excerpt: "Titanic Project, Data Science, Python, Data Analysis"
 mathjax: "true"
 ---
 
-# H1 Heading
 
-## H2 Heading
 
-### H3 Heading
 
-Here's some basic text.
+### Data Extraction and Visualization project using Python:
+
+In this project I will try to answer some cuestions related to the titanic tragedy using Python.
+First we will get our dataset from [Kaggle.com](https://www.kaggle.com/c/titanic-gettingStarted)
+
+After importing Python liberaries such as Pandas, Numpy and seaborn we will open the dataset in Python:
+```python
+    titanic_df = pd.read_csv(r"C:\Users\Usuario\Desktop\Titanic Project\data.csv")
+
 
 And here's some *italics*
 
