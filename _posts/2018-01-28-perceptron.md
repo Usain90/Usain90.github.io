@@ -1,5 +1,5 @@
 ---
-title: "Analyzing Titanic Dataset In Python"
+title: "Example SHOULD BE DELETE"
 date: 2020-09-15
 tags: [data analysis, data science,Python,titanic]
 header:
