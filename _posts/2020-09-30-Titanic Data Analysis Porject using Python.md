@@ -162,7 +162,7 @@ titanic_df.head()
 
 
 
-After taking a look for our data set, in the way to answer the first questions, we could notice that the column **Sex** is divided to two genders, Man and Women.
+After taking a look for our data set, in a way to answer the first questions, we can notice that the column **Sex** is divided to two genders, Man and Women.
 But for better analyzing we will add another gender (Child) asuming that every person is under 16 years old is a child.
 
 
@@ -198,14 +198,14 @@ titanic_df["person"].value_counts()
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_11_1.png" alt="linearly separable data">
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_8_1.png" alt="linearly separable data">
 
 
 As we can see there were on the Titanic:
 
-    537 males
-    271 females
-    83 Children
+   537 males
+   271 females
+   83 Children
 
 Now let's see how they were distributed in their classes.
 
@@ -222,7 +222,7 @@ sns.catplot("Pclass",data=titanic_df,hue="person",kind="count")
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_13_1.png" alt="linearly separable data">
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_11_1.png" alt="linearly separable data">
 
 Now let's get more precise picture of the normal distubiotion of the passengers age on the Titanc:
 
@@ -234,12 +234,11 @@ titanic_df['Age'].hist(bins=70,color='indianred',alpha=0.9)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x2007b065ec8>
 
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_13_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_13_1.png" alt="linearly separable data">
 
 
 Another way to visualize the data is to use FacetGrid to plot multiple kedplots on one plot
@@ -258,12 +257,10 @@ fig.add_legend()
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007b357f48>
 
 
 
-
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_15_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_15_1.png" alt="linearly separable data">
 
 
 Let's do the same for class by changing the hue argument:
@@ -280,12 +277,12 @@ fig.add_legend()
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007b33acc8>
+   
 
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_17_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_17_1.png" alt="linearly separable data">
 
 
 We've gotten a pretty good picture of who the passengers were based on Sex, Age, and Class. So let's move on to our 2nd question: What deck were the passengers on and how does that relate to their class?
@@ -317,13 +314,10 @@ sns.catplot('Cabin',data=cabin_df,palette='winter_d',kind="count")
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007b45fc48>
 
 
 
-
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_22_1.png"
-
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_22_1.png" alt="linearly separable data">
 
 nteresting to note we have a 'T' deck value there which doesn't make sense, we can drop it out with the following code:
 
@@ -337,12 +331,12 @@ sns.catplot('Cabin',data=cabin_df,palette='winter_d',kind="count")
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007a226548>
+   
 
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_24_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_24_1.png" alt="linearly separable data">
 
 
 now that we've analyzed the distribution by decks, let's go ahead and answer our third question:
@@ -359,12 +353,12 @@ sns.catplot('Embarked',data=titanic_df,hue='Pclass',order=['C','Q','S'],kind="co
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007ad32ac8>
+  
 
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_26_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_26_1.png" alt="linearly separable data">
 
 
 An interesting find here is that in Queenstown, almost all the passengers that boarded there were 3rd class. It would be intersting to look at the economics of that town in that time period for further investigation.
@@ -537,12 +531,12 @@ sns.catplot('came_with',data=titanic_df,kind='count',order=(["alone","family"]))
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007b357bc8>
 
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_32_1.png"
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_32_1.png" alt="linearly separable data">
 
 
 Great work! Now that we've throughly analyzed the data let's go ahead and take a look at the most interesting (and open-ended) question: What factors helped someone survive the sinking?
@@ -559,12 +553,11 @@ sns.catplot('Survivor',data=titanic_df,palette='Set1',kind="count")
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007c929808>
+    
 
 
 
-
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_34_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_34_1.png" alt="linearly separable data">
 
 
 So quite a few more people died than those who survived. Let's see if the class of the passengers had an effect on their survival rate, since the movie Titanic popularized the notion that the 3rd class passengers did not do as well as their 1st and 2nd class counterparts.
@@ -578,12 +571,12 @@ sns.catplot('Pclass','Survived',data=titanic_df,kind="point")
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007cb30148>
+    
 
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_36_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_36_1.png" alt="linearly separable data">
 
 
 Look like survival rates for the 3rd class are substantially lower! But maybe this effect is being caused by the large amount of men in the 3rd class in combination with the women and children first policy. Let's use 'hue' to get a clearer picture on this.
@@ -597,12 +590,11 @@ sns.catplot('Pclass','Survived',hue='person',data=titanic_df,kind="point")
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007dd08888>
 
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_38_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_38_1.png" alt="linearly separable data">
 
 
 From this data it looks like being a male or being in 3rd class were both not favourable for survival. Even regardless of class the result of being a male in any class dramatically decreases your chances of survival.
@@ -619,12 +611,12 @@ sns.lmplot('Age','Survived',data=titanic_df)
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007de15788>
+    
 
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_40_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_40_1.png" alt="linearly separable data">
 
 
 Looks like there is a general trend that the older the passenger was, the less likely they survived. Let's go ahead and use hue to take a look at the effect of class and age.
@@ -638,12 +630,12 @@ sns.lmplot('Age','Survived',hue='Pclass',data=titanic_df,palette='winter')
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007deabf48>
+   
 
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_42_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_42_1.png" alt="linearly separable data">
 
 
 We can also use the x_bin argument to clean up this figure and grab the data and bin it by age with a std attached!
@@ -658,12 +650,10 @@ sns.lmplot('Age','Survived',hue='Pclass',data=titanic_df,palette='winter',x_bins
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007e5a2248>
 
 
 
-
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_44_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_44_1.png" alt="linearly separable data">
 
 
 Interesting find on the older 1st class passengers! What about if we relate gender and age with the survival set?
@@ -676,12 +666,11 @@ sns.lmplot('Age','Survived',hue='Sex',data=titanic_df,palette='winter',x_bins=ge
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x2007e6ac6c8>
+    
 
 
 
-
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_46_1.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_46_1.png" alt="linearly separable data">
 
 
 
