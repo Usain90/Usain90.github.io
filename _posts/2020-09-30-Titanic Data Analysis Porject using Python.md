@@ -198,7 +198,7 @@ titanic_df["person"].value_counts()
 
 
 
-![png](output_8_1.png)
+![png](titanic-checkpoint_files/titanic-checkpoint_11_1.png)
 
 
 As we can see there were on the Titanic:
