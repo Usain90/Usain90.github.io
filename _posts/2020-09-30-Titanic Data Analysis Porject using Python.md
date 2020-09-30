@@ -198,7 +198,7 @@ titanic_df["person"].value_counts()
 
 
 
-![png](titanic-checkpoint_files/titanic-checkpoint_11_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_11_1.png" alt="linearly separable data">
 
 
 As we can see there were on the Titanic:
@@ -222,8 +222,7 @@ sns.catplot("Pclass",data=titanic_df,hue="person",kind="count")
 
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_11_1.png"
-
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_13_1.png" alt="linearly separable data">
 
 Now let's get more precise picture of the normal distubiotion of the passengers age on the Titanc:
 
