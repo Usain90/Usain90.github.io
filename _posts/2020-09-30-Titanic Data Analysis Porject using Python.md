@@ -3,7 +3,7 @@ title: "Titanoc catastrophe data analysis using Python"
 date: 2020-09-15
 tags: [data analysis, data science,Python,]
 header:
-  image: "/images/perceptron/percept.jpg"
+  image: "/images/titanic-checkpoint_files/titanic-678x381.jpg"
 excerpt: "Titanic Project, Data Science, Python, Data Analysis"
 mathjax: "true"
 ---
@@ -222,7 +222,7 @@ sns.catplot("Pclass",data=titanic_df,hue="person",kind="count")
 
 
 
-![png](output_11_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_11_1.png"
 
 
 Now let's get more precise picture of the normal distubiotion of the passengers age on the Titanc:
@@ -240,7 +240,7 @@ titanic_df['Age'].hist(bins=70,color='indianred',alpha=0.9)
 
 
 
-![png](output_13_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_13_1.png"
 
 
 Another way to visualize the data is to use FacetGrid to plot multiple kedplots on one plot
@@ -264,7 +264,7 @@ fig.add_legend()
 
 
 
-![png](output_15_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_15_1.png"
 
 
 Let's do the same for class by changing the hue argument:
@@ -286,7 +286,7 @@ fig.add_legend()
 
 
 
-![png](output_17_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_17_1.png"
 
 
 We've gotten a pretty good picture of who the passengers were based on Sex, Age, and Class. So let's move on to our 2nd question: What deck were the passengers on and how does that relate to their class?
@@ -323,7 +323,7 @@ sns.catplot('Cabin',data=cabin_df,palette='winter_d',kind="count")
 
 
 
-![png](output_22_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_22_1.png"
 
 
 nteresting to note we have a 'T' deck value there which doesn't make sense, we can drop it out with the following code:
@@ -343,7 +343,7 @@ sns.catplot('Cabin',data=cabin_df,palette='winter_d',kind="count")
 
 
 
-![png](output_24_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_24_1.png"
 
 
 now that we've analyzed the distribution by decks, let's go ahead and answer our third question:
@@ -365,7 +365,7 @@ sns.catplot('Embarked',data=titanic_df,hue='Pclass',order=['C','Q','S'],kind="co
 
 
 
-![png](output_26_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_26_1.png"
 
 
 An interesting find here is that in Queenstown, almost all the passengers that boarded there were 3rd class. It would be intersting to look at the economics of that town in that time period for further investigation.
@@ -543,7 +543,7 @@ sns.catplot('came_with',data=titanic_df,kind='count',order=(["alone","family"]))
 
 
 
-![png](output_32_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_32_1.png"
 
 
 Great work! Now that we've throughly analyzed the data let's go ahead and take a look at the most interesting (and open-ended) question: What factors helped someone survive the sinking?
@@ -565,7 +565,7 @@ sns.catplot('Survivor',data=titanic_df,palette='Set1',kind="count")
 
 
 
-![png](output_34_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_34_1.png"
 
 
 So quite a few more people died than those who survived. Let's see if the class of the passengers had an effect on their survival rate, since the movie Titanic popularized the notion that the 3rd class passengers did not do as well as their 1st and 2nd class counterparts.
@@ -584,7 +584,7 @@ sns.catplot('Pclass','Survived',data=titanic_df,kind="point")
 
 
 
-![png](output_36_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_36_1.png"
 
 
 Look like survival rates for the 3rd class are substantially lower! But maybe this effect is being caused by the large amount of men in the 3rd class in combination with the women and children first policy. Let's use 'hue' to get a clearer picture on this.
@@ -603,7 +603,7 @@ sns.catplot('Pclass','Survived',hue='person',data=titanic_df,kind="point")
 
 
 
-![png](output_38_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_38_1.png"
 
 
 From this data it looks like being a male or being in 3rd class were both not favourable for survival. Even regardless of class the result of being a male in any class dramatically decreases your chances of survival.
@@ -625,7 +625,7 @@ sns.lmplot('Age','Survived',data=titanic_df)
 
 
 
-![png](output_40_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_40_1.png"
 
 
 Looks like there is a general trend that the older the passenger was, the less likely they survived. Let's go ahead and use hue to take a look at the effect of class and age.
@@ -644,7 +644,7 @@ sns.lmplot('Age','Survived',hue='Pclass',data=titanic_df,palette='winter')
 
 
 
-![png](output_42_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_42_1.png"
 
 
 We can also use the x_bin argument to clean up this figure and grab the data and bin it by age with a std attached!
@@ -664,7 +664,7 @@ sns.lmplot('Age','Survived',hue='Pclass',data=titanic_df,palette='winter',x_bins
 
 
 
-![png](output_44_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_44_1.png"
 
 
 Interesting find on the older 1st class passengers! What about if we relate gender and age with the survival set?
@@ -682,10 +682,8 @@ sns.lmplot('Age','Survived',hue='Sex',data=titanic_df,palette='winter',x_bins=ge
 
 
 
-![png](output_46_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/titanic/output_46_1.png"
 
 
 
-```python
 
-```
