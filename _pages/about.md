@@ -5,4 +5,4 @@ header:
   image: "/images/IMG_20200716_154319.png"
 ---
 
-“I’m an aspiring data scientist and a formar Civil Engineer, experienced with Python and R programming. I specialize in machine learning techniques, and data visualization. I love working on projects together, so feel free to reach out for collaboration!”
+“A former Civil Engineer, self-motivated and result-oriented with practical experience in analytics and data science. Experience in analyzing, developing and implementing data projects to meet expectations, Passionate about data analytics, data science, machine learning, artificial intelligence and BI tools.”
