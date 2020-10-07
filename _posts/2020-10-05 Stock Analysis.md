@@ -1,6 +1,6 @@
 ---
 title: "Stock Market Analysis"
-date: 2020-09-15
+date: 2020-10-05
 tags: [data analysis, data science,Python,]
 header:
   image: "/images/photos/5efb4e664dca680c761dce06.jpg"
