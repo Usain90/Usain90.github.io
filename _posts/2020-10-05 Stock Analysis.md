@@ -1,3 +1,12 @@
+---
+title: "Titanic catastrophe data analysis using Python"
+date: 2020-09-15
+tags: [data analysis, data science,Python,]
+header:
+  image: "/images/photos/5efb4e664dca680c761dce06.jpg"
+excerpt: "Titanic Project, Data Science, Python, Data Analysis"
+mathjax: "true"
+---
 ### Stock Market Analysis:
 
 In this portfolio project we will be looking at data from the stock market, particularly some technology stocks. We will use *pandas* to get stock information, visualize different aspects of it, and finally we will look at a few ways of analyzing the risk of a stock, based on its previous performance history. We will also be predicting future stock prices through a **Monte Carlo method!**
@@ -13,20 +22,7 @@ We'll be answering the following questions along the way:
 - How can we attempt to predict future stock behavior?
 
 
-```python
-from __future__ import division
-import pandas as pd
-import numpy as np
-from pandas import Series, DataFrame
-from scipy import stats
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import seaborn as sns
-%matplotlib inline
-sns.set_style("whitegrid")
-import pandas_datareader as pdr
-from datetime import datetime
-```
+Let's creat a list and call it *tech_list*
 
 
 ```python
@@ -196,232 +192,6 @@ TSLA
 
 
 
-```python
-GOOG.head()
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Open</th>
-      <th>Close</th>
-      <th>Volume</th>
-      <th>Adj Close</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2019-10-01</th>
-      <td>1231.229980</td>
-      <td>1203.579956</td>
-      <td>1219.000000</td>
-      <td>1205.099976</td>
-      <td>1273500</td>
-      <td>1205.099976</td>
-    </tr>
-    <tr>
-      <th>2019-10-02</th>
-      <td>1196.979980</td>
-      <td>1171.290039</td>
-      <td>1196.979980</td>
-      <td>1176.630005</td>
-      <td>1615100</td>
-      <td>1176.630005</td>
-    </tr>
-    <tr>
-      <th>2019-10-03</th>
-      <td>1189.060059</td>
-      <td>1162.430054</td>
-      <td>1180.000000</td>
-      <td>1187.829956</td>
-      <td>1621200</td>
-      <td>1187.829956</td>
-    </tr>
-    <tr>
-      <th>2019-10-04</th>
-      <td>1211.439941</td>
-      <td>1189.170044</td>
-      <td>1191.890015</td>
-      <td>1209.000000</td>
-      <td>1162400</td>
-      <td>1209.000000</td>
-    </tr>
-    <tr>
-      <th>2019-10-07</th>
-      <td>1218.203979</td>
-      <td>1203.750000</td>
-      <td>1204.400024</td>
-      <td>1207.680054</td>
-      <td>842900</td>
-      <td>1207.680054</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-TSLA.describe()
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Open</th>
-      <th>Close</th>
-      <th>Volume</th>
-      <th>Adj Close</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>254.000000</td>
-      <td>254.000000</td>
-      <td>254.000000</td>
-      <td>254.000000</td>
-      <td>2.540000e+02</td>
-      <td>254.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>183.048851</td>
-      <td>171.928733</td>
-      <td>177.476189</td>
-      <td>178.020858</td>
-      <td>6.828537e+07</td>
-      <td>178.020858</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>120.733026</td>
-      <td>111.788912</td>
-      <td>116.497418</td>
-      <td>117.023693</td>
-      <td>4.152941e+07</td>
-      <td>117.023693</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>46.896000</td>
-      <td>44.855999</td>
-      <td>45.959999</td>
-      <td>46.285999</td>
-      <td>1.085270e+07</td>
-      <td>46.285999</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>86.278999</td>
-      <td>82.025000</td>
-      <td>85.070501</td>
-      <td>85.511497</td>
-      <td>3.867288e+07</td>
-      <td>85.511497</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>154.772003</td>
-      <td>142.832001</td>
-      <td>147.945000</td>
-      <td>149.703003</td>
-      <td>6.310600e+07</td>
-      <td>149.703003</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>240.966503</td>
-      <td>231.864998</td>
-      <td>237.372005</td>
-      <td>237.280495</td>
-      <td>8.740808e+07</td>
-      <td>237.280495</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>502.489990</td>
-      <td>470.510010</td>
-      <td>502.140015</td>
-      <td>498.320007</td>
-      <td>3.046940e+08</td>
-      <td>498.320007</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-TSLA.info()
-```
-
-    <class 'pandas.core.frame.DataFrame'>
-    DatetimeIndex: 254 entries, 2019-10-01 to 2020-10-01
-    Data columns (total 6 columns):
-     #   Column     Non-Null Count  Dtype  
-    ---  ------     --------------  -----  
-     0   High       254 non-null    float64
-     1   Low        254 non-null    float64
-     2   Open       254 non-null    float64
-     3   Close      254 non-null    float64
-     4   Volume     254 non-null    float64
-     5   Adj Close  254 non-null    float64
-    dtypes: float64(6)
-    memory usage: 13.9 KB
-    
 
 
 ```python
@@ -436,8 +206,7 @@ TSLA["Adj Close"].plot(legend=True, figsize=(10,4))
 
 
 
-![png](output_9_1.png)
-
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_9_1.png" alt="linearly separable data">
 
 
 ```python
@@ -452,7 +221,7 @@ AAPL["Adj Close"].plot(legend=True, figsize=(10,4))
 
 
 
-![png](output_10_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_10_1.png" alt="linearly separable data">
 
 
 
@@ -468,7 +237,7 @@ MSFT["Adj Close"].plot(legend=True, figsize=(10,4))
 
 
 
-![png](output_11_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_11_1.png" alt="linearly separable data">
 
 
 
@@ -484,8 +253,7 @@ GOOG["Adj Close"].plot(legend=True, figsize=(10,4))
 
 
 
-![png](output_12_1.png)
-
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_12_1.png" alt="linearly separable data">
 
 
 ```python
@@ -500,7 +268,7 @@ AMZN["Adj Close"].plot(legend=True, figsize=(10,4))
 
 
 
-![png](output_13_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_13_1.png" alt="linearly separable data">
 
 
 
@@ -516,7 +284,7 @@ TSLA["Volume"].plot(legend=True, figsize=(10,4))
 
 
 
-![png](output_14_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_14_1.png" alt="linearly separable data">
 
 
 
@@ -544,7 +312,7 @@ AAPL[["Adj Close","MA for 10 days","MA for 20 days","MA for 50 days"]].plot(subp
 
 
 
-![png](output_17_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_17_1.png" alt="linearly separable data">
 
 
 ### Section 2 - Daily Return Analysis
@@ -569,7 +337,7 @@ AAPL["Daily Return"].plot(figsize=(10,4),legend=True,linestyle="--",marker="o")
 
 
 
-![png](output_20_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_20_1.png" alt="linearly separable data">
 
 
 
@@ -585,8 +353,7 @@ sns.distplot(AAPL['Daily Return'].dropna(),bins=100,color='purple')
 
 
 
-![png](output_21_1.png)
-
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_21_1.png" alt="linearly separable data">
 
 
 ```python
@@ -885,8 +652,7 @@ sns.jointplot("GOOG","GOOG",tech_rets, kind="scatter",color="seagreen")
 
 
 
-![png](output_26_1.png)
-
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_26_1.png" alt="linearly separable data">
 
 
 ```python
@@ -901,7 +667,7 @@ sns.jointplot("GOOG","TSLA",tech_rets, kind="scatter",color="seagreen")
 
 
 
-![png](output_27_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_27_1.png" alt="linearly separable data">
 
 
 
@@ -917,10 +683,6 @@ sns.pairplot(tech_rets.dropna())
 
 
 
-![png](output_28_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_28_1.png" alt="linearly separable data">
 
 
-
-```python
-
-```
