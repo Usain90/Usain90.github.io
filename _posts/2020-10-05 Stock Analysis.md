@@ -1,10 +1,10 @@
 ---
-title: "Titanic catastrophe data analysis using Python"
+title: "Stock Market Analysis"
 date: 2020-09-15
 tags: [data analysis, data science,Python,]
 header:
   image: "/images/photos/5efb4e664dca680c761dce06.jpg"
-excerpt: "Titanic Project, Data Science, Python, Data Analysis"
+excerpt: "Stocks, Data Science, Python, Data Analysis"
 mathjax: "true"
 ---
 ### Stock Market Analysis:
