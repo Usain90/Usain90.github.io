@@ -745,3 +745,5 @@ rets['AAPL'].quantile(0.05)
 
 -0.03377112705414851
 
+The 0.05 empirical quantile of daily returns is at -0.033. That means that with 95% confidence, our worst daily loss will not exceed 3%. If we have a 1 million dollar investment, our one-day 5% VaR is 0.03 * 1,000,000 = $30,000.
+
