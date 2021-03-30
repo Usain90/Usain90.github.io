@@ -686,4 +686,38 @@ sns.pairplot(tech_rets.dropna())
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_28_1.png" alt="linearly separable data">
 
+Above we can see all the relationships on daily returns between all the stocks. A quick glance shows an interesting correlation between Google and Amazon daily returns. It might be interesting to investigate that individual comaprison. While the simplicity of just calling sns.pairplot() is fantastic we can also use sns.PairGrid() for full control of the figure, including what kind of plots go in the diagonal, the upper triangle, and the lower triangle. 
 
+
+
+### Section 3 - Risk Analysis
+
+There are many ways we can quantify risk, one of the most basic ways using the information we've gathered on daily percentage returns is by comparing the expected return with the standard deviation of the daily returns.
+
+
+```python
+# Let's start by defining a new DataFrame as a clenaed version of the oriignal tech_rets DataFrame
+rets = tech_rets.dropna()
+
+area = np.pi*20
+
+plt.scatter(rets.mean(), rets.std(),alpha = 0.5,s =area)
+
+# Set the x and y limits of the plot (optional, remove this if you don't see anything in your plot)
+plt.ylim([0.01,0.025])
+plt.xlim([-0.003,0.004])
+
+#Set the plot axis titles
+plt.xlabel('Expected returns')
+plt.ylabel('Risk')
+
+# Label the scatter plotsز
+for label, x, y in zip(rets.columns, rets.mean(), rets.std()):
+    plt.annotate(
+        label, 
+        xy = (x, y), xytext = (50, 50),
+        textcoords = 'offset points', ha = 'right', va = 'bottom',
+        arrowprops = dict(arrowstyle = '-', connectionstyle = 'arc3,rad=-0.3'))
+```
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/risk analisis.png" alt="linearly separable data">
