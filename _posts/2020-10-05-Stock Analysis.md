@@ -695,15 +695,15 @@ Above we can see all the relationships on daily returns between all the stocks. 
 There are many ways we can quantify risk, one of the most basic ways using the information we've gathered on daily percentage returns is by comparing the expected return with the standard deviation of the daily returns.
 
 
-c
-# Let's start by defining a new DataFrame as a clenaed version of the oriignal tech_rets DataFrame
+
+#Let's start by defining a new DataFrame as a clenaed version of the oriignal tech_rets DataFrame
 rets = tech_rets.dropna()
 
 area = np.pi*20
 
 plt.scatter(rets.mean(), rets.std(),alpha = 0.5,s =area)
 
-# Set the x and y limits of the plot (optional, remove this if you don't see anything in your plot)
+#Set the x and y limits of the plot (optional, remove this if you don't see anything in your plot)
 plt.ylim([0.01,0.025])
 plt.xlim([-0.003,0.004])
 
@@ -711,7 +711,7 @@ plt.xlim([-0.003,0.004])
 plt.xlabel('Expected returns')
 plt.ylabel('Risk')
 
-# Label the scatter plotsز
+#Label the scatter plots
 for label, x, y in zip(rets.columns, rets.mean(), rets.std()):
     plt.annotate(
         label, 
@@ -735,9 +735,13 @@ For this method we will calculate the empirical quantiles from a histogram of da
 sns.distplot(AAPL['Daily Return'].dropna(),bins=100,color='purple')
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/photos/Risk analysis 2.png" alt="linearly separable data">
+
 Now we can use quantile to get the risk value for the stock.
 
 ```python
 # The 0.05 empirical quantile of daily returns
 rets['AAPL'].quantile(0.05)
 ```
+
+-0.03377112705414851
+
