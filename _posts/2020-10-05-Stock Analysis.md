@@ -695,7 +695,7 @@ Above we can see all the relationships on daily returns between all the stocks. 
 There are many ways we can quantify risk, one of the most basic ways using the information we've gathered on daily percentage returns is by comparing the expected return with the standard deviation of the daily returns.
 
 
-
+```python
 #Let's start by defining a new DataFrame as a clenaed version of the oriignal tech_rets DataFrame
 rets = tech_rets.dropna()
 
