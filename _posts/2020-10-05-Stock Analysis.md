@@ -695,7 +695,7 @@ Above we can see all the relationships on daily returns between all the stocks. 
 There are many ways we can quantify risk, one of the most basic ways using the information we've gathered on daily percentage returns is by comparing the expected return with the standard deviation of the daily returns.
 
 
-```python
+c
 # Let's start by defining a new DataFrame as a clenaed version of the oriignal tech_rets DataFrame
 rets = tech_rets.dropna()
 
@@ -721,3 +721,23 @@ for label, x, y in zip(rets.columns, rets.mean(), rets.std()):
 ```
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/photos/risk analisis.png" alt="linearly separable data">
+
+### Value at Risk
+
+Let's go ahead and define a value at risk parameter for our stocks. We can treat value at risk as the amount of money we could expect to lose (aka putting at risk) for a given confidence interval. Theres several methods we can use for estimating a value at risk. Let's go ahead and see some of them in action.
+
+### Value at risk using the "bootstrap" method
+For this method we will calculate the empirical quantiles from a histogram of daily returns. For more information on quantiles, check out this link: http://en.wikipedia.org/wiki/Quantile
+
+
+```python
+# Note the use of dropna() here, otherwise the NaN values can't be read by seaborn
+sns.distplot(AAPL['Daily Return'].dropna(),bins=100,color='purple')
+```
+<img src="{{ site.url }}{{ site.baseurl }}/images/photos/Risk analysis 2.png" alt="linearly separable data">
+Now we can use quantile to get the risk value for the stock.
+
+```python
+# The 0.05 empirical quantile of daily returns
+rets['AAPL'].quantile(0.05)
+```
