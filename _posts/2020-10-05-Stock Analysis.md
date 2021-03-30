@@ -355,6 +355,7 @@ sns.distplot(AAPL['Daily Return'].dropna(),bins=100,color='purple')
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/photos/output_21_1.png" alt="linearly separable data">
 
+Now what if we wanted to analyze the returns of all the stocks in our list? Let's go ahead and build a DataFrame with all the ['Close'] columns for each of the stocks dataframes.
 
 ```python
 closing_df=pdr.DataReader(tech_list,"yahoo",start,end)["Adj Close"]
@@ -495,7 +496,7 @@ closing_df
 <p>254 rows × 5 columns</p>
 </div>
 
-
+Now that we have all the closing prices, let's go ahead and get the daily return for all the stocks, like we did for the Apple stock.
 
 
 ```python
