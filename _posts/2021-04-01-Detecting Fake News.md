@@ -52,11 +52,11 @@ labels = df.label
 labels.head()
 ```
 
-0    FAKE
-1    FAKE
-2    REAL
-3    FAKE
-4    REAL
+0    FAKE<br>
+1    FAKE<br>
+2    REAL<br>
+3    FAKE<br>
+4    REAL<br>
 Name: label, dtype: object
 
 
