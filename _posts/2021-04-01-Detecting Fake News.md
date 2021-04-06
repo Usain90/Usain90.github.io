@@ -59,5 +59,8 @@ labels.head()
 4    REAL<br>
 Name: label, dtype: object
 
-
+*Fifth* we have to split our data set into traninig and testing sets so to apply ML algorithem 
+```python
+x_train, x_test, y_train, y_test = train_test_split(df["text"], labels, test_size = 0.2, Random_state = 7)
+```
 
