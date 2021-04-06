@@ -53,9 +53,16 @@ labels.head()
 ```
 
 0    FAKE
+
 1    FAKE
+
 2    REAL
+
 3    FAKE
+
 4    REAL
+
 Name: label, dtype: object
+
+
 
