@@ -44,3 +44,18 @@ df.shape
 df.head()
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/photos/df.head.png" alt="linearly separable data">
+
+*Fourth* we'll labeling our data, since we ar going to use ML algorithem labeling our data is an important part of data preprocessing for ML, particularly for supervised learning, in which both input and output data are labeled for classification to provide a learning basis for future data processing.
+
+```python
+labels = df.label
+labels.head()
+```
+
+0    FAKE
+1    FAKE
+2    REAL
+3    FAKE
+4    REAL
+Name: label, dtype: object
+
